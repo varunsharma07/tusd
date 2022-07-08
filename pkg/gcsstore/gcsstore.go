@@ -61,6 +61,8 @@ func (store GCSStore) NewUpload(ctx context.Context, info handler.FileInfo) (han
 		info.ID = uid.Uid()
 	}
 
+	fmt.Println("Testing if working or not : Testing")
+
 	info.Storage = map[string]string{
 		"Type":   "gcsstore",
 		"Bucket": store.Bucket,
