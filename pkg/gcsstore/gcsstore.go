@@ -62,6 +62,10 @@ func (store GCSStore) NewUpload(ctx context.Context, info handler.FileInfo) (han
 	}
 
 	fmt.Println("Testing if working or not : Testing")
+	filename := info.MetaData["filename"]
+	splitList := strings.Split(filename, ".")
+	extension := splitList[len(splitList)-1]
+	fmt.Println(extension)
 
 	info.Storage = map[string]string{
 		"Type":   "gcsstore",
