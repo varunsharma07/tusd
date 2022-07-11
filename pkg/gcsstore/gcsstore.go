@@ -65,6 +65,7 @@ func (store GCSStore) NewUpload(ctx context.Context, info handler.FileInfo) (han
 	filename := info.MetaData["filename"]
 	splitList := strings.Split(filename, ".")
 	extension := splitList[len(splitList)-1]
+	fmt.Println("Testing if working or not : Testing")
 	fmt.Println(extension)
 	info.ID = info.ID + extension
 
